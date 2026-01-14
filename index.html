@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Attendance - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js"></script>
+    <style>
+        body {
+            background: url('images/login_bg.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient-mesh"></div>
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="glass-card text-center animate-fade" style="max-width: 450px; width: 100%;">
+            <div class="mb-5">
+                <div class="d-inline-block p-3 rounded-circle mb-3" style="background: rgba(74, 144, 226, 0.1);">
+                    <i class="fas fa-brain fa-3x text-primary"></i>
+                </div>
+                <h2 class="fw-bold">AI Attendance</h2>
+                <p class="text-secondary">Smart Biometric Portal</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="mb-4 text-start">
+                    <label class="form-label small ps-1">Administrator Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0 text-secondary"><i
+                                class="fas fa-envelope"></i></span>
+                        <input type="email" id="email" class="form-control border-start-0"
+                            placeholder="admin@example.com" value="admin@smart.com" required>
+                    </div>
+                </div>
+                <div class="mb-5 text-start">
+                    <label class="form-label small ps-1">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0 text-secondary"><i
+                                class="fas fa-lock"></i></span>
+                        <input type="password" id="password" class="form-control border-start-0" placeholder="••••••••"
+                            value="admin123" required>
+                    </div>
+                </div>
+                <button type="submit" class="premium-btn w-100 mb-3">
+                    Access Dashboard <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+            </form>
+
+            <p class="small text-secondary mt-3">Powered by Advanced Facial Recognition</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email === "admin@smart.com" && password === "admin123") {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert("Invalid Credentials! Try: admin@smart.com / admin123");
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
